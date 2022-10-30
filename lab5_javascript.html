@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mengenal JavaScript</title>
+    <script language="JavaScript">
+        function pesan() {
+            alert("memanggil javascript lewat body onload")
+        }
+
+
+        //<!--contoh program java script-1-->
+        function tes(val1, val2) {
+            document.write("<br>" + "perkalian : val1*val2 " + "<br>")
+            document.write(val1 * val2)
+            document.write("<br>" + "perkalian : val1/val2 " + "<br>")
+            document.write(val1 / val2)
+            document.write("<br>" + "perkalian : val1+val2 " + "<br>")
+            document.write(val1 + val2)
+            document.write("<br>" + "perkalian : val1-val2 " + "<br>")
+            document.write(val1 - val2)
+            document.write("<br>" + "modulus : val1%val2 " + "<br>")
+            document.write(val1 % val2)
+        }
+    </script>
+
+        <!--CONTOH PROGRAM JAVASCRIPT-2-->
+        <script language="JavaScript">
+            function tes ()
+            {
+                val1=window.prompt("input nilai (1-5): ")
+                switch (val1)
+                {
+                    case "1" :
+                        document.write("bilangan satu")
+                        break
+                    case "2" :
+                        document.write("bilangan dua")
+                        break
+                    case "3" :
+                        document.write("bilangan tiga")
+                        break
+                    case "4" :
+                        document.write("bilangan empat")
+                        break
+                    case "5" :
+                        document.write("bilangan lima")
+                        break
+                    default :
+                        document.write("bilangan lima")
+                }
+            }
+        </script>
+
+        <!--PEMBUATAN FROM-INPUT-->
+        <script language="javascript">
+            function test () {
+                var val1=document.kirim.T1.value
+                if (val1%2==0)
+                    document.kirim.T2.value="bilangan genap"
+                else
+                    document.kirim.T2.value="bilangan genap"       
+            }
+        </script>
+
+        <!--Pilihan menggunakan checkBox dengan perhitungan otomatis//-->
+    <!-- daftar menu-->
+    <script>
+        function hitung(ele) {
+            var total = document.getElementById('total').value;
+                total = (total ? parseInt(total) : 0);
+            var harga = 0;
+
+            if (ele.checked) {
+                harga = ele.value;
+                total += parseInt(harga);
+            } else {
+                harga = ele.value;
+                if (total > 0)
+                total -= parseInt (harga);
+            }
+            document.getElementById('total').value = total;
+        }
+    </script>
+</head>
+
+<body onload=pesan()>
+    <h1>Pengenalan JavaScript</h1>
+    <h3>Contoh document.write dan console.log</h3>
+    <script>
+        document.write("Hello World");
+        console.log("Hello World");
+    </script>
+    <!--PENGGUNAAN ALERT BOX-->
+    <script language="JavaScript">
+        window.alert("ini merupakan pesan untuk anda")
+    </script>
+    <!--PEMASUKAN DATA-->
+    <!--
+     var nama = prompt ("siapa nama anda ?", "masukan nama anda"); <br>
+     document.write("hai, "+nama); <br>
+ -->
+
+    <!--contoh program java script-1-->
+    <input type="button" name="button" value="arithetic" onclick=test(9,4)>
+    <!--CONTOH PROGRAM JAVASCRIPT-2-->
+    <input type="button" name="button 1" value="switch" onclick=test()>
+    <!--CONTOH IF - ELSE-->
+    <script language="JavaScript">
+        var nilai = prompt("nilai (0 - 100) : ", 0);
+        var hasil = "";
+        if (nilai >= 60)
+        hasil = "lulus";
+        else
+        hasil = "tidak lulus";
+        document.write("hasil : " + hasil);
+    </script>
+
+     <!--PEMBUATAN FROM-INPUT-->
+    <form method="post" name="kirim">
+        <p>BIL <input type="text" name="TI" size="20">
+            MERUPAKAN BIL <input type="teks" name="T2" size="20"></p>
+        <p><input type="button" value="TEBAK" name="B1" onclick=test ()></p>
+    </form>
+
+    <!--from button (objek ducument)-->
+    <script language="JavaScript">
+        
+            //function ubahwarnaLB(warna) {
+                //document.bgColor = warna;
+            // }
+            //function ubahwarnaLD(warna) {
+                //document.bgColor = warna;
+            // }
+            
+    </script>
+
+    <h1>tes</h1>
+    <form>
+        <input type="button" value="Latar Belakang Hijau" onclick="ubahwarnaLB('GREEN')">
+        <input type="button" value="Latar Belakang Putih" onclick="ubahwarnaLB('WHITE')">
+        <input type="button" value="Teks Kuning" onclick="ubahwarnaLg('YELLOW')">
+        <input type="button" value="Teks Biru" onclick="ubahwarnaLg('BLUE')">
+    </form>
+    <script language="JavaScript">
+
+        //document.write("dimodifikasi terakhir pada" + document.lastModified);
+
+    </script>
+
+            <!--Pilihan menggunakan checkBox dengan perhitungan otomatis//-->
+    <!-- daftar menu-->
+    <h1>Daftar Menu Makanan</h1>
+    <label><input type="checkbox" value="5000" id="menu1" onclick="hitung(this) ; "/> Ayam Goreng Rp. 5.000</label>
+    <label><input type="checkbox" value="2000" id="menu2" onclick="hitung(this) ; "/> Tempe Goreng Rp. 2.000</label>
+    <label><input type="checkbox" value="2500" id="menu3" onclick="hitung(this) ; "/> Telur Dadar Rp. 2.500</label>
+    <strong>Total Bayar : Rp. <input id="total" type="teks"/></strong>
+</body>
+
+</html>
